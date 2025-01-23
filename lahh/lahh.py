@@ -5,12 +5,10 @@ from PIL import Image
 
 
 def convert(inp, outp):
-    webp_path = sys.argv[2]
-    desired_path = sys.argv[3]
     print("[+] Trying to convert image")
     try:
-        with Image.open(webp_path) as img:
-            img.save(desired_path, format="PNG")
+        with Image.open(inp) as img:
+            img.save(outp, format="PNG")
         print("[$] Image converted succesfully")
     except:
         print("[!] Failed to convert image")
@@ -26,8 +24,9 @@ def download(url):
     except:
         print("[!] Failed to download image")
         sys.exit()
+
     try:
-        with Image.open("image.webp") as img:
+        with Image.open("temp.webp") as img:
             img.verify()
         print("[$] Image verified")
     except:

@@ -22,6 +22,7 @@ if command == "-f":
     webp_path = sys.argv[2]
     desired_path = sys.argv[3]
     convert(webp_path, desired_path)
+
 elif command == "-u":
     url = sys.argv[2]
     desired_path = sys.argv[3]
